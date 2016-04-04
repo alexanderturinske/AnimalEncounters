@@ -4,7 +4,6 @@ var router = express.Router();
 router.use(cors());
 
 router.use('/', express.static(__dirname + '/../client'));
-router.use('/node-modules', express.static(__dirname + '/../node-modules'));
 
 router.route('/')
   .options(function(req, res) {

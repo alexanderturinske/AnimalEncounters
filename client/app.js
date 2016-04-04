@@ -10,9 +10,9 @@ var faunadexApp = angular.module('faunadexApp', [])
       url: '/',
       data: {animal: animal}
     }).then(function success(res) {
-      console.log('There was a POST success');
-    }).then(function error(res) {
-      console.log('There was a POST error!');
+      console.log('There was a POST success: ' + res.data.animal);
+    }, function error(res) {
+      console.log('There was a POST error: ' + res.data);
     });
   };
 
@@ -21,9 +21,9 @@ var faunadexApp = angular.module('faunadexApp', [])
       method: 'GET',
       url: '/',
     }).then(function success(res) {
-      console.log('There was a GET success');
-    }).then(function error(res) {
-      console.log('There was a GET error!');
+      console.log('There was a GET success: ' + res.data);
+    }, function error(res) {
+      console.log('There was a GET error: ' + res.data);
     });
   };
 

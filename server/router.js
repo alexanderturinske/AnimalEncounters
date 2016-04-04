@@ -7,13 +7,13 @@ router.use('/', express.static(__dirname + '/../client'));
 
 router.route('/')
   .options(function(req, res) {
-     res.status(200).send('OPTIONS request');
+     res.status(200).send(req.body);
   })
   .get(function(req, res) {
-    res.status(200).send(__dirname + '/../client');
+    res.status(200).send(req.body);
   })
   .post(function(req, res) {
-    res.status(200).send('POST request!');
+    res.status(200).send(req.body);
   });
 
 module.exports = router;

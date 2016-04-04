@@ -1,9 +1,13 @@
 var faunadexApp = angular.module('faunadexApp', [])
 
 .factory('Click', function() {
-  var sendData = function(animal) {
+  var click = {};
+
+  click.sendData = function(animal) {
     console.log('Animal sent to database!');
   };
+  
+  return click;
 })
 
 .controller('AnimalController', function($scope, Click) {

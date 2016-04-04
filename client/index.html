@@ -7,10 +7,11 @@
     <script type="text/javascript" src="app.js"></script>
   </head>
   <body>
+    <h1>Faunadex</h1>
     <div class="animalList" ng-controller='AnimalController'>
       <form ng-submit="addAnimal()">
         <input name="animal" placeholder="Enter new animal name" ng-model="newAnimal"></input>
-        <button type="submit">
+        <button type="submit">Submit</button>
       </form>
       <ul>
         <li ng-repeat="animal in animals">

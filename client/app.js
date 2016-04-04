@@ -1,12 +1,32 @@
 var faunadexApp = angular.module('faunadexApp', [])
 
-.factory('Click', function() {
+.factory('Click', function($http) {
   var click = {};
 
   click.sendData = function(animal) {
     console.log('Animal sent to database!');
+    $http({
+      method: 'POST',
+      url: '/',
+      data: {animal: animal}
+    }).then(function success(res) {
+      console.log('There was a POST success');
+    }).then(function error(res) {
+      console.log('There was a POST error!');
+    });
   };
-  
+
+  click.retrieveData = function() {
+    $http({
+      method: 'GET',
+      url: '/',
+    }).then(function success(res) {
+      console.log('There was a GET success');
+    }).then(function error(res) {
+      console.log('There was a GET error!');
+    });
+  };
+
   return click;
 })
 

@@ -1,0 +1,14 @@
+{
+  "name": "Faunadex",
+  "version": "v0.0.0",
+  "description": "Keep track of the animals you encounter in the wild and obtain information about them",
+  "keywords": ["animals", "Faunadex"],
+  "author": "Alexander James Turinske <a.turinske@gmail.com> (https://github.com/alexanderturinske)",
+  "files": ["index.html"],
+  "repository": {
+     "type": "git",
+     "url": "https://github.com/alexanderturinske/Faunadex.git"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

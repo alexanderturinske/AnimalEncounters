@@ -1,5 +1,5 @@
 var express = require('express');
-var bodyparser = require('body-parser');
+var bodyParser = require('body-parser');
 var router = require('./router');
 
 var app = express();
@@ -9,4 +9,6 @@ app.listen(port, function() {
   console.log('App is running on port ' + port);
 });
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use('/', router);

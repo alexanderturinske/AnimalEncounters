@@ -1,13 +1,17 @@
 var express = require('express');
-var bodyparser = require('body-parser');
 var router = express.Router();
 
-reouter.use('/', express.static(__dirname + '../client'));
+router.use('/', express.static(__dirname + '../client'));
 
-router.get('/', function(req, res) {
-  res.send('Get request!');
-});
+router.route('/')
+  .options(function(req, res) {
+     res.status(200).send('OPTIONS request');
+  })
+  .get(function(req, res) {
+    res.status(200).send('Get request!');
+  })
+  .post(function(req, res) {
+    res.status(200).send('Post request!');
+  });
 
-router.post('/', function(req, res) {
-  res.send('Post request!');
-});
+module.exports = router;

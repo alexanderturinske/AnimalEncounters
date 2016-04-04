@@ -8,6 +8,10 @@
   </head>
   <body>
     <div class="animalList" ng-controller='AnimalController'>
+      <form ng-submit="addAnimal()">
+        <input name="animal" placeholder="Enter new animal name" ng-model="newAnimal"></input>
+        <button type="submit">
+      </form>
       <ul>
         <li ng-repeat="animal in animals">
           <div>Animal: {{animal.name}}</span>

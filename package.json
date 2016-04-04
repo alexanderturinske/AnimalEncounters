@@ -19,6 +19,7 @@
     "angular": "^1.5.3",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.0",
+    "cors": "^2.7.1",
     "express": "^4.13.4",
     "jquery": "^2.2.2",
     "mongodb": "^2.1.14",

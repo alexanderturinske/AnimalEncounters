@@ -2,13 +2,26 @@
   "name": "Faunadex",
   "version": "v0.0.0",
   "description": "Keep track of the animals you encounter in the wild and obtain information about them",
-  "keywords": ["animals", "Faunadex"],
+  "keywords": [
+    "animals",
+    "Faunadex"
+  ],
+  "license": "MIT",
   "author": "Alexander James Turinske <a.turinske@gmail.com> (https://github.com/alexanderturinske)",
-  "files": ["index.html"],
+  "files": [
+    "index.html"
+  ],
   "repository": {
-     "type": "git",
-     "url": "https://github.com/alexanderturinske/Faunadex.git"
+    "type": "git",
+    "url": "https://github.com/alexanderturinske/Faunadex.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "angular": "^1.5.3",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongodb": "^2.1.14",
+    "mongoose": "^4.4.11"
+  },
   "devDependencies": {}
 }

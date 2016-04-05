@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 // require router to handle requests to /
 var animalRouter = require('./routers/animalRouter');
+var userRouter = require('./routers/userRouter');
 // require database
 var db = require('./database');
 
@@ -22,4 +23,5 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client'));
 
 // use router for requests to '/'
-app.use('/animals', animalRouter);
+app.use('/api/animals', animalRouter);
+app.use('/api/users', userRouter);

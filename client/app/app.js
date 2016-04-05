@@ -14,7 +14,7 @@ angular.module('faunadexApp', [
     // setup default view state
     .state('view', {
       url: '/view',
-      templateUrl: 'app/template.html',
+      templateUrl: 'app/templates/animalList.html',
       controller: 'AnimalController'
     });
 });

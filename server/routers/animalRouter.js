@@ -1,6 +1,6 @@
 var express = require('express');
 var cors = require('cors');
-var Animal = require('./schema');
+var Animal = require('./../models/Animals');
 
 // create router
 var router = express.Router();

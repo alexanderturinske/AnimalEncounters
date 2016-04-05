@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 // require router to handle requests to /
-var router = require('./router');
+var router = require('./routers/animalRouter');
 // require database
 var db = require('./database');
 

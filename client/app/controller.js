@@ -9,8 +9,9 @@ angular.module('faunadexApp.ctrl1', [])
   };
 
   $scope.retrieveAnimal = function() {
-    Click.retrieveData($scope.animals);
-    console.log('$scope.animals: ', $scope.animals);
+    Click.retrieveData().then(function(result) {
+      $scope.animals = result;
+    });
   };
 
 });

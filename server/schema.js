@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 
+// create database schema
 var animalSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -11,17 +12,7 @@ var animalSchema = new mongoose.Schema({
   }
 });
 
+// create model to make instances
 var Animal = mongoose.model('Animal', animalSchema);
-
-// test information
-var octopus = new Animal({
-  name: 'Octopus'
-});
-var elephant = new Animal({
-  name: 'Elephant'
-});
-var parrot = new Animal({
-  name: 'African Grey Parrot'
-});
 
 module.exports = Animal;

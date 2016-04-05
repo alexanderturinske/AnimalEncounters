@@ -21,4 +21,7 @@ angular.module('faunadexApp.ctrl1', [])
     });
   };
 
+  // run this immediately upon load to load animals
+  $scope.retrieveAnimal();
+
 });

@@ -23,7 +23,8 @@
     "express": "^4.13.4",
     "jquery": "^2.2.2",
     "mongodb": "^2.1.14",
-    "mongoose": "^4.4.11"
+    "mongoose": "^4.4.11",
+    "ui-router": "^1.0.0-alpha0"
   },
   "devDependencies": {}
 }

@@ -7,7 +7,7 @@ angular.module('faunadexApp.factory1', [])
     console.log('Animal sent to database!');
     $http({
       method: 'POST',
-      url: '/',
+      url: '/animals',
       data: {animal: animal}
     }).then(function success(res) {
       console.log('There was a POST success: ' + res.data.animal);
@@ -16,12 +16,13 @@ angular.module('faunadexApp.factory1', [])
     });
   };
 
-  click.retrieveData = function() {
+  click.retrieveData = function(variable) {
     $http({
       method: 'GET',
-      url: '/',
+      url: '/animals',
     }).then(function success(res) {
-      console.log('There was a GET success: ' + res.data);
+      console.log('There was a GET success: ', res.data);
+      variable = res.data;
     }, function error(res) {
       console.log('There was a GET error: ' + res.data);
     });

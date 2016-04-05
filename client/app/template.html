@@ -1,5 +1,5 @@
 <div class="animalList">
-  <form ng-submit="addAnimal()">
+  <form ng-submit="addAnimal(); retrieveAnimal();">
     <input name="animal" placeholder="Enter new animal name" ng-model="newAnimal"></input>
     <button type="submit">Submit</button>
   </form>

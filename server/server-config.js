@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 // require router to handle requests to /
-var router = require('./routers/animalRouter');
+var animalRouter = require('./routers/animalRouter');
 // require database
 var db = require('./database');
 
@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // serve up static files
-app.use('/', express.static(__dirname + '/../client'));
+app.use(express.static(__dirname + '/../client'));
 
 // use router for requests to '/'
-app.use('/animals', router);
+app.use('/animals', animalRouter);

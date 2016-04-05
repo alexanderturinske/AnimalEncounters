@@ -3,14 +3,14 @@ var cors = require('cors');
 var Animal = require('./../models/Animals');
 
 // create router
-var router = express.Router();
+var animalRouter = express.Router();
 
 // use middleware to handle CORS headers and status responses
-router.use(cors());
+animalRouter.use(cors());
 
 // handle routes to '/animals'
 // the route is '/', but stands for '/animals' because '/animals' was required to get here from the server
-router.route('/')
+animalRouter.route('/')
   // options request
   .options(function(req, res) {
      res.status(200).send(req.body);
@@ -42,4 +42,4 @@ router.route('/')
     res.status(200).send(req.body);
   });
 
-module.exports = router;
+module.exports = animalRouter;

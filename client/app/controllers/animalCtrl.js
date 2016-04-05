@@ -1,5 +1,5 @@
 // main angular module/controller
-angular.module('faunadexApp.ctrl1', [])
+angular.module('faunadexApp.animalCtrl', [])
 
 .controller('AnimalController', function($scope, Click) {
   // array to hold animals encountered
@@ -8,7 +8,7 @@ angular.module('faunadexApp.ctrl1', [])
   // add an animal to animals encountered
   $scope.addAnimal = function() {
     // Click.sendData returns a promise, so use .then to run the update method
-    Click.sendData($scope.newAnimal)
+    Click.sendData('/animals', $scope.newAnimal)
       .then($scope.retrieveAnimal);
     $scope.newAnimal = null;
   };
@@ -16,7 +16,7 @@ angular.module('faunadexApp.ctrl1', [])
   // retrieve animals that user has encountered
   $scope.retrieveAnimal = function() {
     // Click.retrieveData returns a promise, so one needs a .then to utilize the output of it
-    Click.retrieveData().then(function(result) {
+    Click.retrieveData('/animals').then(function(result) {
       $scope.animals = result;
     });
   };

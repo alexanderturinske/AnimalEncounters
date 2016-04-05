@@ -6,12 +6,15 @@ router.use(cors());
 
 router.use('/', express.static(__dirname + '/../client'));
 
-router.route('/')
+router.route('/animals')
   .options(function(req, res) {
      res.status(200).send(req.body);
   })
   .get(function(req, res) {
-    res.status(200).send(req.body);
+    Animal.find({})
+      .exec(function(err, animals) {
+        res.status(200).json(animals);
+      });
   })
   .post(function(req, res) {
     Animal.findOne({ name: req.body.animal })

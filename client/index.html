@@ -2,21 +2,14 @@
 <html ng-app="faunadexApp">
   <head>
     <title>Faunadex</title>
-    <script type="text/javascript" src="/lib/angular/angular.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/factory.js"></script>
+    <script type="text/javascript" src="app/controller.js"></script>
   </head>
   <body>
     <h1>Faunadex</h1>
-    <div class="animalList" ng-controller='AnimalController'>
-      <form ng-submit="addAnimal()">
-        <input name="animal" placeholder="Enter new animal name" ng-model="newAnimal"></input>
-        <button type="submit">Submit</button>
-      </form>
-      <ul>
-        <li ng-repeat="animal in animals">
-          <div>Animal: {{animal.name}}</span>
-        </li>
-      </ul>
-    </div>
+    <div ui-view></div>
   </body>
 </html>

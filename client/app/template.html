@@ -1,0 +1,11 @@
+<div class="animalList">
+  <form ng-submit="addAnimal()">
+    <input name="animal" placeholder="Enter new animal name" ng-model="newAnimal"></input>
+    <button type="submit">Submit</button>
+  </form>
+  <ul>
+    <li ng-repeat="animal in animals">
+      <div>Animal: {{animal.name}}</span>
+    </li>
+  </ul>
+</div>

@@ -7,8 +7,9 @@ angular.module('faunadexApp.ctrl1', [])
 
   // add an animal to animals encountered
   $scope.addAnimal = function() {
-    // Click.sendData returns a promise, so if one were to want to do anything with the response, one would have to use .then
-    Click.sendData($scope.newAnimal);
+    // Click.sendData returns a promise, so use .then to run the update method
+    Click.sendData($scope.newAnimal)
+      .then($scope.retrieveAnimal);
     $scope.newAnimal = null;
   };
 

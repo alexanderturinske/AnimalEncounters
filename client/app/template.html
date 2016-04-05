@@ -1,7 +1,5 @@
 <div class="animalList">
-  <!-- Below call both the addAnimal on click as well as retrieve animals -->
-  <!-- TODO: Fix the bug where the retrieveAnimal doesn't retrieve the latest animal -->
-  <form ng-submit="addAnimal(); retrieveAnimal();">
+  <form ng-submit="addAnimal();">
     <input name="animal" placeholder="Enter new animal name" ng-model="newAnimal"></input>
     <button type="submit">Submit</button>
   </form>

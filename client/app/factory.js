@@ -1,23 +1,25 @@
+// main angular module/factory that handles requests to the server
 angular.module('faunadexApp.factory1', [])
 
 .factory('Click', function($http) {
   var click = {};
 
+  // POST request that sends the data to the server
   click.sendData = function(animal) {
-    console.log('Animal sent to database!');
+
+    // $http returns a promise so when sendData is called, we need to return the $http function to return the promise and then return the data to use it in the next .then
     return $http({
       method: 'POST',
       url: '/animals',
       data: {animal: animal}
     }).then(function success(res) {
-      console.log('There was a POST success: ' + res.data.animal);
       return res;
     }, function error(res) {
-      console.log('There was a POST error: ' + res.data);
       return res;
     });
   };
 
+  // $http returns a promise so when sendData is called, we need to return the $http function to return the promise and then return the data to use it in the next .then
   click.retrieveData = function() {
     return $http({
       method: 'GET',
@@ -27,5 +29,6 @@ angular.module('faunadexApp.factory1', [])
     });
   };
 
+  // return the object in the factory that holds all the methods
   return click;
 });

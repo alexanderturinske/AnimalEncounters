@@ -1,14 +1,19 @@
+// main angular module/router
 angular.module('faunadexApp', [
   'ui.router',
   'faunadexApp.ctrl1',
   'faunadexApp.factory1'
 ])
+
+// handles routing
 .config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/state1');
+  // setup misc. routing
+  $urlRouterProvider.otherwise('/view');
 
   $stateProvider
-    .state('state1', {
-      url: '/state1',
+    // setup default view state
+    .state('view', {
+      url: '/view',
       templateUrl: 'app/template.html',
       controller: 'AnimalController'
     });

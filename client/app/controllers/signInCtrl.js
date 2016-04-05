@@ -6,7 +6,7 @@ angular.module('faunadexApp.signInCtrl', [])
   // user signs in
   $scope.retrieveUser = function() {
     // Click.retrieveData returns a promise, so one needs a .then to utilize the output of it
-    Click.retrieveData().then(function(result) {
+    Click.retrieveData('/api/users/signin', $scope.username, $scope.password).then(function(result) {
       $scope.animals = result;
     });
     $scope.username = null;

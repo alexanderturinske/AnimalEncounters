@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var db = require('./database');
 
 var animalSchema = new mongoose.Schema({
   name: {

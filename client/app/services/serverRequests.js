@@ -5,7 +5,7 @@ angular.module('faunadexApp.factory1', [])
   var click = {};
 
   // POST request that sends the data to the server
-  click.sendData = function(animal) {
+  click.sendData = function(url, animal) {
 
     // $http returns a promise so when sendData is called, we need to return the $http function to return the promise and then return the data to use it in the next .then
     return $http({
@@ -20,7 +20,7 @@ angular.module('faunadexApp.factory1', [])
   };
 
   // $http returns a promise so when sendData is called, we need to return the $http function to return the promise and then return the data to use it in the next .then
-  click.retrieveData = function() {
+  click.retrieveData = function(url) {
     return $http({
       method: 'GET',
       url: '/animals',

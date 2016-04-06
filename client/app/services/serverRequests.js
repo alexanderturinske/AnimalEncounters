@@ -8,10 +8,10 @@ angular.module('faunadexApp.factory1', [])
   click.sendData = function(url, data) {
     if (url === '/animal') {
       data = {animal: data};
-    } else if (url === '/api/users') {
+    } else if (url === '/api/users/signup' || url === '/api/users/signin') {
       data = {username: arguments[1], password: arguments[2]};
     }
-    
+
     // $http returns a promise so when sendData is called, we need to return the $http function to return the promise and then return the data to use it in the next .then
     return $http({
       method: 'POST',

@@ -4,6 +4,11 @@ angular.module('faunadexApp.animalCtrl', [])
 .controller('AnimalController', function($scope, Click) {
   // array to hold animals encountered
   $scope.animals = [];
+  $scope.currentAnimal = 'Select an animal!';
+
+  $scope.current = function(animal) {
+    $scope.currentAnimal = animal.name;
+  };
 
   // add an animal to animals encountered
   $scope.addAnimal = function() {

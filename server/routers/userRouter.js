@@ -20,13 +20,13 @@ userRouter.route('/signin')
   .post(function(req, res) {
     User.findOne({ username: req.body.username })
       .exec(function(err, user) {
-        if (!user) {
-          new User({ username: req.body.username, password: req.body.password })
-            .save(function(err, addedUser) {
-              if (err) {
-                return console.log(err);
-              }
-            });
+        if (user) {
+          user.comparePassword(req.body.password, function(err, isMatch) {
+            if (err) {
+              throw err;
+            }
+            res.status(200).send(isMatch);
+          })
         } else {
           res.status(300).send('That username already exists!');
         }
@@ -42,6 +42,7 @@ userRouter.route('/signup')
   // post requests adds an animal to the database
   // TODO create a helper function to do the database work and put it in a separate file
   .post(function(req, res) {
+    console.log('POST!');
     User.findOne({ username: req.body.username })
       .exec(function(err, user) {
         if (!user) {
@@ -52,9 +53,9 @@ userRouter.route('/signup')
               }
             });
         } else {
-          res.status(300).send('That username already exists!');
+          res.status(300).send(false);
         }
       });
-    res.status(200).send(req.body);
+    res.status(200).send(true);
   });
 module.exports = userRouter;

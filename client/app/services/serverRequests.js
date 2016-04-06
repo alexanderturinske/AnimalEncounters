@@ -6,7 +6,7 @@ angular.module('faunadexApp.factory1', [])
 
   // POST request that sends the data to the server
   click.sendData = function(url, data) {
-    if (url === '/animal') {
+    if (url === '/api/animals') {
       data = {animal: data};
     } else if (url === '/api/users/signup' || url === '/api/users/signin') {
       data = {username: arguments[1], password: arguments[2]};
